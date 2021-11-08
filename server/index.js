@@ -15,9 +15,8 @@ app.use(bodyParser.json());
 app.use(express.static('../front'))
 
 app.post('/s3Url', async (req, res) => {
-  const name = req.body.name
-  console.log('name = ', name)
-  const url = await generateUploadUrl(req.body.name)
+  const filename = req.body.name
+  const url = await generateUploadUrl(filename)
   res.send({url})
 })
 

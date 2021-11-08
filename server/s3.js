@@ -28,8 +28,6 @@ const generateUploadUrl = async (dataName) =>  {
     Key: generateRadomFileName(dataName),
     Expires: 60 * 3,
   }
-  console.log({params})
-
   const url =  await s3.getSignedUrlPromise(
     'putObject',
     params
