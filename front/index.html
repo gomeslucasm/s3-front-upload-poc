@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    button{
+      margin-top: 40px;
+      width: 100px;
+      border: 1px solid gray;
+      background-color: white;
+      border-radius: 3px;
+      padding: .2rem;
+    }
+
+    #image-form{
+      display: grid;
+    }
+
+    hr{
+      margin: 2rem 0px;
+    }
+
+    img{
+      max-width: 100%;
+      max-height: 300px;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <script defer src='./index.js'></script>
+</head>
+
+<div>
+  <section>
+    <h1>Image upload s3 via front</h1>
+  </section>
+
+  <hr/>
+ 
+  <form id = 'image-form'>
+    <label>
+      Enviar arquivo
+      <input id = 'image-input' type = 'file' accept="image/*" />
+    </label>
+    <button type = 'submit' >Upload</button>
+  </form>
+
+</div>
+
+<hr/>
+
+<img id = 'image' />
+</html>
+
+
+
