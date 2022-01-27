@@ -1,6 +1,6 @@
 const imageForm = document.getElementById('image-form')
 const imageInput = document.getElementById('image-input')
-
+const imageActivity = document.getElementById('image-activity')
 
 imageForm.addEventListener('submit', async (e)=>{
   e.preventDefault()
@@ -9,12 +9,13 @@ imageForm.addEventListener('submit', async (e)=>{
 
   const postData = JSON.stringify({name: file.name})
 
+  imageActivity.innerHTML = 'Requesting upload url'
+
   const { url } =  await fetch('/s3Url', {method: "POST",headers: {
 		'Content-type': 'application/json; charset=UTF-8'
 	},body: postData}).then(res => res.json())
 
-  console.log({url})
-  console.log({file}) 
+  imageActivity.innerHTML = 'Uploading image'
 
   await fetch(url, {
     method: "PUT",
@@ -29,7 +30,8 @@ imageForm.addEventListener('submit', async (e)=>{
     console.log('error = ', error)
   });
 
-
+  imageActivity.innerHTML = 'Image uploaded'
+  imageActivity.style.color = 'green'
 
   const imageUrl = url.split('?')[0]
 
