@@ -18,3 +18,14 @@ The server will be run on localhost:8080
 ```
 npm install
 ```
+
+# Environment
+
+Create an `.env` file on `/server` with the credentials.
+
+```
+REGION=''
+BUCKET_NAME=''
+AWS_ACCESS_KEY_ID=''
+AWS_SECRET_ACCESS_KEY=''
+```
